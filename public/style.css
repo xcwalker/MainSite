@@ -42,6 +42,7 @@ body {
     top: var(--body-margin);
     left: var(--body-margin);
     right: var(--body-margin);
+    z-index: 9999;
 
     /* sizing */
     height: var(--topbar-height);
@@ -117,7 +118,8 @@ body {
     transition: transform 1s;
 }
 
-#app-draw.visible {
+#app-draw.visible,
+#app-draw:focus-within {
     transform: translateX(0%);
 }
 
@@ -299,7 +301,377 @@ body {
     /* position */
     position: absolute;
     bottom: var(--gap);
-    left: var(--gap); 
-    right: var(--gap);   
-    text-align: center; 
+    left: var(--gap);
+    right: var(--gap);
+    text-align: center;
+}
+
+/* profile / about me*/
+#about-me {
+    /* flex */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: calc(var(--gap) * 4);
+    justify-content: center;
+    align-items: center;
+
+    /* spacing */
+    margin: calc(var(--gap) * 8) 0;
+}
+
+@media only screen and (max-width: 797px) {
+    #about-me {
+        text-align: center;
+    }
+
+    .profile {
+        justify-content: center;
+    }
+
+    .profile-horizontal {
+        justify-content: center;
+    }
+
+    #profile-name .hover {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .vod {
+        width: 100% !important;
+    }
+}
+
+.profile-picture {
+    height: 350px;
+}
+
+.profile-picture img {
+    max-height: 100%;
+    border-radius: 50%;
+}
+
+.profile {
+    /* flex */
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--gap) / 2);
+
+    /* styling */
+    color: var(--primary-text-color);
+    line-height: 1;
+    white-space: pre-line;
+}
+
+.profile h2 {
+    /* text */
+    font-size: 26px;
+}
+
+.profile h3 {
+    /* text */
+    font-size: 18px;
+}
+
+.profile p {
+    /* sizing */
+    max-width: 450px;
+
+    /* text */
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.profile p strong {
+    /* text */
+    font-weight: 600;
+}
+
+.profile-horizontal {
+    /* flex */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--gap);
+}
+
+.social {
+    height: 50px;
+    display: flex;
+
+    /* styling */
+    border-radius: var(--border-radius);
+    overflow: clip;
+}
+
+.social svg {
+    max-height: 100%;
+}
+
+.social:hover,
+.social:focus,
+.social:focus-visible {
+    outline: var(--secondary-text-color) var(--topbar-border-width) solid;
+    background-color: transparent !important;
+}
+
+.social:hover .hoverHide,
+.social:focus .hoverHide,
+.social:focus-visible .hoverHide {
+    fill: transparent !important;
+}
+
+.social:hover .hoverHide.cutThrough,
+.social:focus .hoverHide.cutThrough,
+.social:focus-visible .hoverHide.cutThrough {
+    fill: var(--primary-color) !important;
+}
+
+.social:hover .hoverShow,
+.social:focus .hoverShow,
+.social:focus-visible .hoverShow {
+    fill: var(--secondary-text-color) !important;
+}
+
+.social:active {
+    outline: var(--selector-color) var(--topbar-border-width) solid;
+    background-color: transparent !important;
+}
+
+.social:active .hoverShow {
+    fill: var(--selector-color) !important;
+}
+
+/* contacts */
+#contact {
+    /* grid */
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+
+    /* spacing */
+    margin: calc(var(--gap) * 8) 0;
+    /* variables */
+    --width: 425px;
+
+    /* text */
+    color: var(--primary-text-color);
+    text-align: center;
+    line-height: 1.1;
+}
+
+.contact-details {
+    /* flex */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--gap);
+    flex-wrap: wrap;
+}
+
+.contact-button {
+    /* text */
+    text-decoration: none;
+    color: var(--primary-text-color);
+    font-size: 20px;
+
+    /* siziing */
+    width: var(--width);
+    height: 50px;
+    padding: calc(var(--gap) / 2) calc(var(--gap) * 2);
+    background-color: var(--tertiary-color);
+    border-radius: var(--border-radius);
+
+    /* flex */
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+}
+
+.contact-button:hover,
+.contact-button:focus,
+.contact-button:focus-visible {
+    background-color: transparent;
+    color: var(--tertiary-color);
+    outline: var(--tertiary-color) var(--topbar-border-width) solid;
+}
+
+.contact-button:active {
+    background-color: transparent;
+    color: var(--primary-text-color);
+    outline: var(--primary-text-color) var(--topbar-border-width) solid;
+}
+
+/* youtube */
+#youtube {
+    /* position */
+    position: relative;
+
+    /* sizing */
+    height: 400px;
+    width: 100%;
+
+    /* styling */
+    background-image: url("./Data/Images/20191204_130721.jpg");
+    background-position: center;
+    background-size: cover;
+    border-radius: var(--border-radius);
+
+    /* variables */
+    --primary-text-color: white;
+}
+
+.wmlogo {
+    /* position */
+    position: absolute;
+    top: var(--gap);
+    left: var(--gap);
+
+    /* sizing */
+    width: 40px;
+
+    /* styling */
+    color: var(--primary-text-color);
+    fill: currentColor;
+}
+
+.wmlogo svg {
+    /* sizing */
+    max-height: 100%;
+}
+
+.xcwlogo {
+    /* position */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /* sizing */
+    width: 25vw;
+
+    /* styling */
+    color: var(--primary-text-color);
+    fill: currentColor;
+}
+
+.xcwlogo svg {
+    /* sizing */
+    max-height: 100%;
+}
+
+#youtube .links {
+    /* position */
+    position: absolute;
+    bottom: var(--gap);
+    left: var(--gap);
+    right: var(--gap);
+
+    /* grid */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--gap);
+}
+
+.channel-link {
+    /* sizing */
+    height: 41.5833px;
+
+    /* flex */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* styling */
+    border-radius: var(--border-radius);
+
+    /* text */
+    color: var(--primary-text-color);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+
+    /* transition */
+    transition: background-color 0.6s ease;
+}
+
+.channel-link:hover,
+.channel-link:focus,
+.channel-link:focus-visible {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* betterDiscord */
+#betterDiscord {
+    /* grid */
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+
+    /* spacing */
+    margin: calc(var(--gap) * 8) 0;
+    /* variables */
+    --width: 425px;
+
+    /* text */
+    color: var(--primary-text-color);
+    text-align: center;
+    line-height: 1;
+}
+
+#betterDiscord h2 {
+    /* text */
+    font-size: 24px;
+    font-weight: 700;
+}
+
+#betterDiscord h3 {
+    /* text */
+    font-size: 18px;
+    font-weight: 500;
+}
+
+#betterDiscord .links {
+    /* flex */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--gap);
+    flex-wrap: wrap;
+}
+
+#betterDiscord .link {
+    /* text */
+    text-decoration: none;
+    color: var(--primary-text-color);
+    font-size: 20px;
+
+    /* siziing */
+    width: var(--width);
+    height: 50px;
+    padding: calc(var(--gap) / 2) calc(var(--gap) * 2);
+    background-color: var(--tertiary-color);
+    border-radius: var(--border-radius);
+
+    /* flex */
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+}
+
+#betterDiscord .link:hover,
+#betterDiscord .link:focus,
+#betterDiscord .link:focus-visible {
+    background-color: transparent;
+    color: var(--tertiary-color);
+    outline: var(--tertiary-color) var(--topbar-border-width) solid;
+}
+
+#betterDiscord .link:active {
+    background-color: transparent;
+    color: var(--primary-text-color);
+    outline: var(--primary-text-color) var(--topbar-border-width) solid;
 }

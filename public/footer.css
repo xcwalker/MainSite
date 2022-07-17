@@ -1,0 +1,106 @@
+/** footer **/
+#footer {
+    /* text & svg styling */
+    color: var(--primary-text-color);
+    fill: currentColor;
+
+    /* styling */
+    border-radius: var(--border-radius);
+    background-color: var(--secondary-color);
+    padding: calc(var(--gap) * 2) calc(var(--gap) * 4);
+
+    /* grid */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
+    gap: var(--gap);
+}
+
+.footer-section {
+    /* sizing */
+    width: 282px;
+
+    /* flex */
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+
+.footer-divider {
+    height: 2px;
+    background-color: var(--tertiary-color);
+}
+
+/* footer - section 1 */
+.footer-about {
+    /* sizing */
+    width: 100%;
+}
+
+.footer-about svg {
+    /* sizing */
+    width: 100%;
+}
+
+.footer-about p,
+.footer-bio {
+    /* text */
+    white-space: pre-line;
+}
+
+/* footer - section 2 */
+.footer-apps {
+    /* sizing */
+    max-width: calc(100vw - var(--topbar-padding));
+
+    /* flex */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--topbar-gap);
+}
+
+.footer-app {
+    /* sizing */
+    padding: 4px;
+    min-height: calc(var(--topbar-height) / 1.5);
+    width: 100%;
+
+    /* flex */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--topbar-gap);
+
+    /* styling */
+    color: var(--primary-text-color);
+    fill: currentColor;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 1;
+    border-radius: var(--topbar-radius);
+}
+
+.footer-app:hover,
+.footer-app:focus,
+.footer-app:focus-visible {
+    outline: var(--tertiary-color) var(--topbar-border-width) solid;
+    color: var(--tertiary-color);
+    background-color: transparent;
+}
+
+.footer-app:active {
+    outline: var(--primary-text-color) var(--topbar-border-width) solid;
+    color: var(--primary-text-color);
+    background-color: transparent;
+}
+
+.footer-app * {
+    font-size: inherit;
+    max-height: 100%;
+}
+
+.footer-app img {
+    height: calc((var(--topbar-height) / 1.5) - 8px);
+}
