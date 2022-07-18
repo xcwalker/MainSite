@@ -264,8 +264,8 @@ body {
 
 .application:hover,
 .application:focus {
-    background-color: var(--tertiary-color) !important;
-    color: var(--border-color);
+    background-color: var(--border-color) !important;
+    color: var(--foreground-color);
 }
 
 .application:active {
@@ -514,7 +514,7 @@ body {
     width: 100%;
 
     /* styling */
-    background-image: url("./Data/Images/20191204_130721.jpg");
+    background-image: url("./Data/Images/20191204_130721.webp");
     background-position: center;
     background-size: cover;
     border-radius: var(--border-radius);
@@ -586,6 +586,7 @@ body {
 
     /* styling */
     border-radius: var(--border-radius);
+    background-color: rgba(0, 0, 0, 0.2);
 
     /* text */
     color: var(--primary-text-color);
