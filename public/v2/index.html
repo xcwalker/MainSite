@@ -15,19 +15,27 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-
+    <!-- ----Favicon---- -->
+    <link rel="icon" type="image/svg+xml" href="../Data/favicon/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="../Data/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../Data/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../Data/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../Data/favicon/site.webmanifest">
+    <link rel="mask-icon" href="../Data/favicon/safari-pinned-tab.svg" color="#fec224">
+    <meta name="msapplication-TileColor" content="#212121">
+    <meta name="msapplication-TileImage" content="../Data/favicon/mstile-144x144.png">
+    <meta name="theme-color" content="#212121">
     <!-- ----SEO---- -->
-    <link rel="icon" type="image/svg+xml"
-        href="https://raw.githubusercontent.com/XCWalker/Default/main/iconSVG/REPLACE.svg">
-    <link rel="icon" type="image/png"
-        href="https://raw.githubusercontent.com/XCWalker/Default/main/iconPNG/REPLACE.png">
-    <title>Loading</title>
+    <title>Home | Everything In One Place | XCWalker.dev</title>
+    <meta name="description"
+        content="Just about everything xcwalker, compressed into one small space. Email: contact@xcwalker.dev">
 
     <!-- ----Project Code---- -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="carousel.css"> -->
     <script src="appdraw.js"></script>
     <script defer src="script.js"></script>
+    <!-- <script defer src="carousel.js"></script> -->
 </head>
 
 <body>
@@ -41,25 +49,25 @@
                 </div>
             </div>
             <div class="nav">
-                <nav class="visible">
+                <nav>
                     <ul>
                         <li>
-                            <a href="#about">
+                            <a href="#about" onclick="showNav(false);">
                                 About
                             </a>
                         </li>
                         <li>
-                            <a href="#youtube">
+                            <a href="#youtube" onclick="showNav(false);">
                                 Youtube
                             </a>
                         </li>
                         <li>
-                            <a href="#projects">
+                            <a href="#projects" onclick="showNav(false);">
                                 Projects
                             </a>
                         </li>
                         <li>
-                            <a href="#contact">
+                            <a href="#contact" onclick="showNav(false);">
                                 Contact
                             </a>
                         </li>
@@ -102,12 +110,162 @@
             </picture>
         </div>
     </section>
-    <section>
-        <div class="container">Text</div>
+    <section id="about">
+        <div class="container">
+            <div class="accent"></div>
+            <div class="content">
+                <h2>About</h2>
+                <div class="side-by-side">
+                    <div class="profile-picture">
+                        <picture>
+                            <source srcset="../Data/Images/20210525_124020.jpg" type="text/jpg">
+                            <source srcset="../Data/Images/20210525_124020.webp" type="text/webp">
+                            <img src="../Data/Images/20210525_124020.webp" alt="Xander Walker">
+                        </picture>
+                    </div>
+                    <div class="profile-info">
+                        <h3>Xander Walker</h3>
+                        <h4><a href="mailto:xander@xcwalker.dev">xander@xcwalker.dev</a></h4>
+                        <p><strong>About</strong>
+                            I do stuff mainly for the fun of it.
+                            <strong>What I Do</strong>
+                            Mechanic, Website Designer, and Graphic Designer.
+                            <strong>Homeland</strong>
+                            🇬🇧 Wiltshire, United Kingdom
+                        </p>
+                        <div class="socials">
+                            <a href="https://instagram.com/xc_walker/" aria-label="XCWalker on Instagram"
+                                class="social pad">
+                                <svg aria-label="Instagram Logo" version="1.1" viewBox="0 0 95.999 96"
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <path
+                                        d="m48.004 0c-13.036 0-14.672 0.057-19.792 0.29-5.11 0.234-8.598 1.043-11.65 2.23-3.157 1.226-5.835 2.866-8.503 5.535-2.67 2.668-4.31 5.346-5.54 8.502-1.19 3.053-2 6.542-2.23 11.65-0.229 5.12-0.289 6.757-0.289 19.793s0.058 14.667 0.29 19.787c0.235 5.11 1.044 8.598 2.23 11.65 1.227 3.157 2.867 5.835 5.536 8.503 2.667 2.67 5.345 4.314 8.5 5.54 3.054 1.187 6.543 1.996 11.652 2.23 5.12 0.233 6.755 0.29 19.79 0.29 13.037 0 14.668-0.057 19.788-0.29 5.11-0.234 8.602-1.043 11.656-2.23 3.156-1.226 5.83-2.87 8.497-5.54 2.67-2.668 4.31-5.346 5.54-8.502 1.18-3.053 1.99-6.542 2.23-11.65 0.23-5.12 0.29-6.752 0.29-19.788s-0.06-14.672-0.29-19.792c-0.24-5.11-1.05-8.598-2.23-11.65-1.23-3.157-2.87-5.835-5.54-8.503-2.67-2.67-5.34-4.31-8.5-5.535-3.06-1.187-6.55-1.996-11.66-2.23-5.12-0.233-6.75-0.29-19.79-0.29zm-4.306 8.65c1.278-2e-3 2.704 0 4.306 0 12.816 0 14.335 0.046 19.396 0.276 4.68 0.214 7.22 0.996 8.912 1.653 2.24 0.87 3.837 1.91 5.516 3.59 1.68 1.68 2.72 3.28 3.592 5.52 0.657 1.69 1.44 4.23 1.653 8.91 0.23 5.06 0.28 6.58 0.28 19.39s-0.05 14.33-0.28 19.39c-0.214 4.68-0.996 7.22-1.653 8.91-0.87 2.24-1.912 3.835-3.592 5.514-1.68 1.68-3.275 2.72-5.516 3.59-1.69 0.66-4.232 1.44-8.912 1.654-5.06 0.23-6.58 0.28-19.396 0.28-12.817 0-14.336-0.05-19.396-0.28-4.68-0.216-7.22-0.998-8.913-1.655-2.24-0.87-3.84-1.91-5.52-3.59s-2.72-3.276-3.592-5.517c-0.657-1.69-1.44-4.23-1.653-8.91-0.23-5.06-0.276-6.58-0.276-19.398s0.046-14.33 0.276-19.39c0.214-4.68 0.996-7.22 1.653-8.912 0.87-2.24 1.912-3.84 3.592-5.52s3.28-2.72 5.52-3.592c1.692-0.66 4.233-1.44 8.913-1.655 4.428-0.2 6.144-0.26 15.09-0.27zm29.928 7.97c-3.18 0-5.76 2.577-5.76 5.758 0 3.18 2.58 5.76 5.76 5.76 3.18 0 5.76-2.58 5.76-5.76s-2.58-5.76-5.76-5.76zm-25.622 6.73c-13.613 0-24.65 11.037-24.65 24.65s11.037 24.645 24.65 24.645c13.613 0 24.646-11.032 24.646-24.645s-11.034-24.65-24.647-24.65zm0 8.65c8.836 0 16 7.163 16 16 0 8.836-7.164 16-16 16-8.837 0-16-7.164-16-16 0-8.837 7.163-16 16-16z">
+                                    </path>
+                                </svg>
+                                <svg aria-label="Imastagram Background" class="social-background" version="1.1"
+                                    viewBox="0 0 132 132" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <defs>
+                                        <radialGradient cx="158.43" cy="578.09"
+                                            gradientTransform="matrix(0 -1.982 1.8439 0 -1029.9 455.51)"
+                                            gradientUnits="userSpaceOnUse" id="b" r="65">
+                                            <stop offset="0" stop-color="#fd5"></stop>
+                                            <stop offset=".1" stop-color="#fd5"></stop>
+                                            <stop offset=".5" stop-color="#ff543e"></stop>
+                                            <stop offset="1" stop-color="#c837ab"></stop>
+                                        </radialGradient>
+                                        <radialGradient cx="147.69" cy="473.46"
+                                            gradientTransform="matrix(.17394 .86872 -3.5818 .71718 1649.9 -456.99)"
+                                            gradientUnits="userSpaceOnUse" id="a" r="65">
+                                            <stop offset="0" stop-color="#3771c8"></stop>
+                                            <stop offset=".128" stop-color="#3771c8"></stop>
+                                            <stop offset="1" stop-color="#60f" stop-opacity="0"></stop>
+                                        </radialGradient>
+                                    </defs>
+                                    <path d="m0.5075 0.5055v130.99h130.99v-130.99z" fill="url(#b)"></path>
+                                    <path d="m0.5075 0.5055v130.99h130.99v-130.99z" fill="url(#a)"></path>
+                                </svg>
+                            </a>
+                            <a href="http://www.twitter.com/xc_walker" aria-label="XCWalker on Twitter"
+                                class="social pad">
+                                <svg aria-label="Twitter Logo" version="1.1" viewBox="10 10 44 44"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g data-name="6-twitter">
+                                        <path
+                                            d="M47.2,20.8a8,8,0,0,0,4-4.8c-1.6,1.6-5,2.13-5,2.13A8,8,0,0,0,32.37,25.6H32a23.45,23.45,0,0,1-16.8-8.8S10.4,23.2,17.6,28c0,0-3.2,0-4-.8,0,0-.8,4.8,6.4,8a3.86,3.86,0,0,1-3.2,0c0,3.09,3.22,5.6,7.2,5.6,0,2.21-5.37,4-12,4C22.4,52,47.2,50.4,48.8,23.2l4-4Z">
+                                        </path>
+                                    </g>
+                                </svg>
+                                <div class="social-background" style="background-color: #00aade;"></div>
+                            </a>
+                            <a href="http://www.facebook.com/xander.walker.5" aria-label="XCWalker on Facebook"
+                                class="social">
+                                <svg aria-label="Facebook Logo" data-name="1-facebook" version="1.1" viewBox="0 0 64 64"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M54.4,29.6h-10V22c0-1.86,2.14-2,2.8-2H54V9.6H47.2C39.67,9.6,34,14.93,34,22v7.6H25.6V40H34V64H44.4V40h8.4Z">
+                                    </path>
+                                </svg>
+                                <div class="social-background" style="background-color: #385997;"></div>
+                            </a>
+                            <a href="https://discordapp.com/users/358316209252597761" aria-label="XCWalker on Discord"
+                                class="social pad">
+                                <svg aria-label="Discord Logo" version="1.1" viewBox="5 5 54 54"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="m49.644 15.871c-3.2909-1.5162-6.809-2.6162-10.487-3.2405-0.45167 0.80279-0.97969 1.8848-1.3434 2.7411-3.91-0.57684-7.784-0.57684-11.623 0-0.36344-0.85631-0.90333-1.9383-1.3593-2.7411-3.6819 0.62432-7.2045 1.7303-10.495 3.2526-6.6371 9.8706-8.4357 19.504-7.5364 28.994 4.402 3.2407 8.6679 5.2028 12.862 6.4933 1.0352-1.4034 1.9589-2.8959 2.7548-4.4717-1.5156-0.56498-2.9664-1.2665-4.3382-2.0752 0.36433-0.2676 0.71949-0.54124 1.0637-0.82653 8.364 3.8471 17.452 3.8471 25.716 0 0.34754 0.28529 0.70359 0.55893 1.063 0.82653-1.3752 0.81466-2.8305 1.5162-4.3458 2.0812 0.79585 1.5698 1.7153 3.0622 2.7548 4.4656 4.198-1.2845 8.4681-3.2526 12.87-6.4933 1.0554-11.001-1.8033-20.544-7.5565-29.006zm-26.088 23.173c-2.5105 0-4.57-2.313-4.57-5.1197 0-2.8126 2.0149-5.1258 4.57-5.1258 2.5548 0 4.6136 2.3072 4.57 5.1258 4e-3 2.8067-2.0151 5.1197-4.57 5.1197zm16.888 0c-2.5105 0-4.5693-2.313-4.5693-5.1197 0-2.8126 2.0151-5.1258 4.5693-5.1258 2.555 0 4.6143 2.3072 4.57 5.1258 0 2.8067-2.0149 5.1197-4.57 5.1197z"
+                                        fill-rule="evenodd" stroke-width=".22393"></path>
+                                </svg>
+                                <div class="social-background" style="background-color: #5865f2;"></div>
+                            </a>
+                            <a href="https://www.twitch.tv/xc_walker" aria-label="XCWalker on Twitch"
+                                class="social pad">
+                                <svg aria-label="Twitch Logo" version="1.1" viewBox="50 50 402 402"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="m115 101-22 56v228h78v42h44l41-42h63l85-85v-199zm260 185-48 48h-78l-42 42v-42h-65v-204h233zm-48-100v85h-30v-85zm-78 0v85h-29v-85z">
+                                    </path>
+                                </svg>
+                                <div class="social-background" style="background-color: #6441a4;"></div>
+                            </a>
+                            <a href="https://www.youtube.com/channel/UCoiG3Z0YXszXWLmpnuTx6kA"
+                                aria-label="XCWalker on Youtube" class="social pad">
+                                <svg aria-label="Youtube Logo" version="1.1" viewBox="0 0 159 110"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="m75.451 0.43164c-23.128 0.073196-46.139 1.0504-57.252 3.3691-6.73 1.82-11.999 7.0688-13.799 13.799-4.08 17.9-4.3904 56.6 0.099609 74.9 1.82 6.73 7.0708 12.001 13.801 13.801 17.9 4.12 103 4.7 122 0 6.73-1.82 11.999-7.0708 13.799-13.801 4.35-19.5 4.6604-55.8-0.09961-75-1.82-6.73-7.0708-12.001-13.801-13.801-5.085-1.9631-35.013-3.3617-64.748-3.2676zm-11.252 31.168 40.801 23.4-40.801 23.4v-46.801z">
+                                    </path>
+                                </svg>
+                                <div class="social-background" style="background-color: #ed1f24;"></div>
+                            </a>
+                            <a href="https://www.tiktok.com/@xc_walker?lang=en" aria-label="XCWalker on Tiktok"
+                                class="social pad">
+                                <svg aria-label="Tiktok Logo" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M412.19,118.66a109.27,109.27,0,0,1-9.45-5.5,132.87,132.87,0,0,1-24.27-20.62c-18.1-20.71-24.86-41.72-27.35-56.43h.1C349.14,23.9,350,16,350.13,16H267.69V334.78c0,4.28,0,8.51-.18,12.69,0,.52-.05,1-.08,1.56,0,.23,0,.47-.05.71,0,.06,0,.12,0,.18a70,70,0,0,1-35.22,55.56,68.8,68.8,0,0,1-34.11,9c-38.41,0-69.54-31.32-69.54-70s31.13-70,69.54-70a68.9,68.9,0,0,1,21.41,3.39l.1-83.94a153.14,153.14,0,0,0-118,34.52,161.79,161.79,0,0,0-35.3,43.53c-3.48,6-16.61,30.11-18.2,69.24-1,22.21,5.67,45.22,8.85,54.73v.2c2,5.6,9.75,24.71,22.38,40.82A167.53,167.53,0,0,0,115,470.66v-.2l.2.2C155.11,497.78,199.36,496,199.36,496c7.66-.31,33.32,0,62.46-13.81,32.32-15.31,50.72-38.12,50.72-38.12a158.46,158.46,0,0,0,27.64-45.93c7.46-19.61,9.95-43.13,9.95-52.53V176.49c1,.6,14.32,9.41,14.32,9.41s19.19,12.3,49.13,20.31c21.48,5.7,50.42,6.9,50.42,6.9V131.27C453.86,132.37,433.27,129.17,412.19,118.66Z" />
+                                </svg>
+                                <div class="social-background" style="background-color: #000000;"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="youtube">
+        <div class="container">
+            <div class="accent"></div>
+            <div class="content">
+                <h2>Youtube</h2>
+            </div>
+        </div>
+    </section>
+    <section id="projects">
+        <div class="container">
+            <div class="accent"></div>
+            <div class="content">
+                <h2>Projects</h2>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="container">
+            <div class="accent"></div>
+            <div class="content">
+                <h2>Contact</h2>
+                <p>Lets work together. Contact us on our email.
+                    Or just have a chat. Join our discord server.
+                </p>
+                <div class="side-by-side">
+                    <a class="contact" href="mailto:contact@xcwalker.dev">contact@xcwalker.dev</a>
+                    <a class="contact" href="https://discord.gg/rjd7Spr">Discord Server</a>
+                </div>
+            </div>
+        </div>
     </section>
     <footer>
         <div class="container">
-            <div class="line">
+            <div class="column">
                 <div class="logo-border">
                     <div class="end"></div>
                     <h1>XCWalker</h1>
@@ -119,15 +277,112 @@
                 <p>Just having fun.
                     And sharing it with the world.</p>
                 <div class="divider"></div>
-                <div class="socials"></div>
+                <div class="socials">
+                    <a href="https://instagram.com/xc_walker/" aria-label="XCWalker on Instagram"
+                        class="social pad">
+                        <svg aria-label="Instagram Logo" version="1.1" viewBox="0 0 95.999 96"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <path
+                                d="m48.004 0c-13.036 0-14.672 0.057-19.792 0.29-5.11 0.234-8.598 1.043-11.65 2.23-3.157 1.226-5.835 2.866-8.503 5.535-2.67 2.668-4.31 5.346-5.54 8.502-1.19 3.053-2 6.542-2.23 11.65-0.229 5.12-0.289 6.757-0.289 19.793s0.058 14.667 0.29 19.787c0.235 5.11 1.044 8.598 2.23 11.65 1.227 3.157 2.867 5.835 5.536 8.503 2.667 2.67 5.345 4.314 8.5 5.54 3.054 1.187 6.543 1.996 11.652 2.23 5.12 0.233 6.755 0.29 19.79 0.29 13.037 0 14.668-0.057 19.788-0.29 5.11-0.234 8.602-1.043 11.656-2.23 3.156-1.226 5.83-2.87 8.497-5.54 2.67-2.668 4.31-5.346 5.54-8.502 1.18-3.053 1.99-6.542 2.23-11.65 0.23-5.12 0.29-6.752 0.29-19.788s-0.06-14.672-0.29-19.792c-0.24-5.11-1.05-8.598-2.23-11.65-1.23-3.157-2.87-5.835-5.54-8.503-2.67-2.67-5.34-4.31-8.5-5.535-3.06-1.187-6.55-1.996-11.66-2.23-5.12-0.233-6.75-0.29-19.79-0.29zm-4.306 8.65c1.278-2e-3 2.704 0 4.306 0 12.816 0 14.335 0.046 19.396 0.276 4.68 0.214 7.22 0.996 8.912 1.653 2.24 0.87 3.837 1.91 5.516 3.59 1.68 1.68 2.72 3.28 3.592 5.52 0.657 1.69 1.44 4.23 1.653 8.91 0.23 5.06 0.28 6.58 0.28 19.39s-0.05 14.33-0.28 19.39c-0.214 4.68-0.996 7.22-1.653 8.91-0.87 2.24-1.912 3.835-3.592 5.514-1.68 1.68-3.275 2.72-5.516 3.59-1.69 0.66-4.232 1.44-8.912 1.654-5.06 0.23-6.58 0.28-19.396 0.28-12.817 0-14.336-0.05-19.396-0.28-4.68-0.216-7.22-0.998-8.913-1.655-2.24-0.87-3.84-1.91-5.52-3.59s-2.72-3.276-3.592-5.517c-0.657-1.69-1.44-4.23-1.653-8.91-0.23-5.06-0.276-6.58-0.276-19.398s0.046-14.33 0.276-19.39c0.214-4.68 0.996-7.22 1.653-8.912 0.87-2.24 1.912-3.84 3.592-5.52s3.28-2.72 5.52-3.592c1.692-0.66 4.233-1.44 8.913-1.655 4.428-0.2 6.144-0.26 15.09-0.27zm29.928 7.97c-3.18 0-5.76 2.577-5.76 5.758 0 3.18 2.58 5.76 5.76 5.76 3.18 0 5.76-2.58 5.76-5.76s-2.58-5.76-5.76-5.76zm-25.622 6.73c-13.613 0-24.65 11.037-24.65 24.65s11.037 24.645 24.65 24.645c13.613 0 24.646-11.032 24.646-24.645s-11.034-24.65-24.647-24.65zm0 8.65c8.836 0 16 7.163 16 16 0 8.836-7.164 16-16 16-8.837 0-16-7.164-16-16 0-8.837 7.163-16 16-16z">
+                            </path>
+                        </svg>
+                        <svg aria-label="Imastagram Background" class="social-background" version="1.1"
+                            viewBox="0 0 132 132" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <defs>
+                                <radialGradient cx="158.43" cy="578.09"
+                                    gradientTransform="matrix(0 -1.982 1.8439 0 -1029.9 455.51)"
+                                    gradientUnits="userSpaceOnUse" id="b" r="65">
+                                    <stop offset="0" stop-color="#fd5"></stop>
+                                    <stop offset=".1" stop-color="#fd5"></stop>
+                                    <stop offset=".5" stop-color="#ff543e"></stop>
+                                    <stop offset="1" stop-color="#c837ab"></stop>
+                                </radialGradient>
+                                <radialGradient cx="147.69" cy="473.46"
+                                    gradientTransform="matrix(.17394 .86872 -3.5818 .71718 1649.9 -456.99)"
+                                    gradientUnits="userSpaceOnUse" id="a" r="65">
+                                    <stop offset="0" stop-color="#3771c8"></stop>
+                                    <stop offset=".128" stop-color="#3771c8"></stop>
+                                    <stop offset="1" stop-color="#60f" stop-opacity="0"></stop>
+                                </radialGradient>
+                            </defs>
+                            <path d="m0.5075 0.5055v130.99h130.99v-130.99z" fill="url(#b)"></path>
+                            <path d="m0.5075 0.5055v130.99h130.99v-130.99z" fill="url(#a)"></path>
+                        </svg>
+                    </a>
+                    <a href="http://www.twitter.com/xc_walker" aria-label="XCWalker on Twitter"
+                        class="social pad">
+                        <svg aria-label="Twitter Logo" version="1.1" viewBox="10 10 44 44"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g data-name="6-twitter">
+                                <path
+                                    d="M47.2,20.8a8,8,0,0,0,4-4.8c-1.6,1.6-5,2.13-5,2.13A8,8,0,0,0,32.37,25.6H32a23.45,23.45,0,0,1-16.8-8.8S10.4,23.2,17.6,28c0,0-3.2,0-4-.8,0,0-.8,4.8,6.4,8a3.86,3.86,0,0,1-3.2,0c0,3.09,3.22,5.6,7.2,5.6,0,2.21-5.37,4-12,4C22.4,52,47.2,50.4,48.8,23.2l4-4Z">
+                                </path>
+                            </g>
+                        </svg>
+                        <div class="social-background" style="background-color: #00aade;"></div>
+                    </a>
+                    <a href="http://www.facebook.com/xander.walker.5" aria-label="XCWalker on Facebook"
+                        class="social">
+                        <svg aria-label="Facebook Logo" data-name="1-facebook" version="1.1" viewBox="0 0 64 64"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M54.4,29.6h-10V22c0-1.86,2.14-2,2.8-2H54V9.6H47.2C39.67,9.6,34,14.93,34,22v7.6H25.6V40H34V64H44.4V40h8.4Z">
+                            </path>
+                        </svg>
+                        <div class="social-background" style="background-color: #385997;"></div>
+                    </a>
+                    <a href="https://discordapp.com/users/358316209252597761" aria-label="XCWalker on Discord"
+                        class="social pad">
+                        <svg aria-label="Discord Logo" version="1.1" viewBox="5 5 54 54"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="m49.644 15.871c-3.2909-1.5162-6.809-2.6162-10.487-3.2405-0.45167 0.80279-0.97969 1.8848-1.3434 2.7411-3.91-0.57684-7.784-0.57684-11.623 0-0.36344-0.85631-0.90333-1.9383-1.3593-2.7411-3.6819 0.62432-7.2045 1.7303-10.495 3.2526-6.6371 9.8706-8.4357 19.504-7.5364 28.994 4.402 3.2407 8.6679 5.2028 12.862 6.4933 1.0352-1.4034 1.9589-2.8959 2.7548-4.4717-1.5156-0.56498-2.9664-1.2665-4.3382-2.0752 0.36433-0.2676 0.71949-0.54124 1.0637-0.82653 8.364 3.8471 17.452 3.8471 25.716 0 0.34754 0.28529 0.70359 0.55893 1.063 0.82653-1.3752 0.81466-2.8305 1.5162-4.3458 2.0812 0.79585 1.5698 1.7153 3.0622 2.7548 4.4656 4.198-1.2845 8.4681-3.2526 12.87-6.4933 1.0554-11.001-1.8033-20.544-7.5565-29.006zm-26.088 23.173c-2.5105 0-4.57-2.313-4.57-5.1197 0-2.8126 2.0149-5.1258 4.57-5.1258 2.5548 0 4.6136 2.3072 4.57 5.1258 4e-3 2.8067-2.0151 5.1197-4.57 5.1197zm16.888 0c-2.5105 0-4.5693-2.313-4.5693-5.1197 0-2.8126 2.0151-5.1258 4.5693-5.1258 2.555 0 4.6143 2.3072 4.57 5.1258 0 2.8067-2.0149 5.1197-4.57 5.1197z"
+                                fill-rule="evenodd" stroke-width=".22393"></path>
+                        </svg>
+                        <div class="social-background" style="background-color: #5865f2;"></div>
+                    </a>
+                    <a href="https://www.twitch.tv/xc_walker" aria-label="XCWalker on Twitch"
+                        class="social pad">
+                        <svg aria-label="Twitch Logo" version="1.1" viewBox="50 50 402 402"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="m115 101-22 56v228h78v42h44l41-42h63l85-85v-199zm260 185-48 48h-78l-42 42v-42h-65v-204h233zm-48-100v85h-30v-85zm-78 0v85h-29v-85z">
+                            </path>
+                        </svg>
+                        <div class="social-background" style="background-color: #6441a4;"></div>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCoiG3Z0YXszXWLmpnuTx6kA"
+                        aria-label="XCWalker on Youtube" class="social pad">
+                        <svg aria-label="Youtube Logo" version="1.1" viewBox="0 0 159 110"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="m75.451 0.43164c-23.128 0.073196-46.139 1.0504-57.252 3.3691-6.73 1.82-11.999 7.0688-13.799 13.799-4.08 17.9-4.3904 56.6 0.099609 74.9 1.82 6.73 7.0708 12.001 13.801 13.801 17.9 4.12 103 4.7 122 0 6.73-1.82 11.999-7.0708 13.799-13.801 4.35-19.5 4.6604-55.8-0.09961-75-1.82-6.73-7.0708-12.001-13.801-13.801-5.085-1.9631-35.013-3.3617-64.748-3.2676zm-11.252 31.168 40.801 23.4-40.801 23.4v-46.801z">
+                            </path>
+                        </svg>
+                        <div class="social-background" style="background-color: #ed1f24;"></div>
+                    </a>
+                    <a href="https://www.tiktok.com/@xc_walker?lang=en" aria-label="XCWalker on Tiktok"
+                        class="social pad">
+                        <svg aria-label="Tiktok Logo" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M412.19,118.66a109.27,109.27,0,0,1-9.45-5.5,132.87,132.87,0,0,1-24.27-20.62c-18.1-20.71-24.86-41.72-27.35-56.43h.1C349.14,23.9,350,16,350.13,16H267.69V334.78c0,4.28,0,8.51-.18,12.69,0,.52-.05,1-.08,1.56,0,.23,0,.47-.05.71,0,.06,0,.12,0,.18a70,70,0,0,1-35.22,55.56,68.8,68.8,0,0,1-34.11,9c-38.41,0-69.54-31.32-69.54-70s31.13-70,69.54-70a68.9,68.9,0,0,1,21.41,3.39l.1-83.94a153.14,153.14,0,0,0-118,34.52,161.79,161.79,0,0,0-35.3,43.53c-3.48,6-16.61,30.11-18.2,69.24-1,22.21,5.67,45.22,8.85,54.73v.2c2,5.6,9.75,24.71,22.38,40.82A167.53,167.53,0,0,0,115,470.66v-.2l.2.2C155.11,497.78,199.36,496,199.36,496c7.66-.31,33.32,0,62.46-13.81,32.32-15.31,50.72-38.12,50.72-38.12a158.46,158.46,0,0,0,27.64-45.93c7.46-19.61,9.95-43.13,9.95-52.53V176.49c1,.6,14.32,9.41,14.32,9.41s19.19,12.3,49.13,20.31c21.48,5.7,50.42,6.9,50.42,6.9V131.27C453.86,132.37,433.27,129.17,412.19,118.66Z" />
+                        </svg>
+                        <div class="social-background" style="background-color: #000000;"></div>
+                    </a>
+                </div>
             </div>
-            <div class="line">
+            <div class="column">
                 <h2>Applications</h2>
             </div>
-            <div class="line">
+            <div class="column">
                 <h2>Links</h2>
+                <a
+                    href="https://searrson.xcwalker.dev/StreamBackground/?text1=Searrson&amp;text1Color=%23ffffff&amp;backgroundColor=unset&amp;backgroundColor1=red&amp;backgroundColor2=navy&amp;backgroundColor3=blue&amp;backgroundColor4=purple&amp;textColor=%23ffffff&amp;text2=Now+With+A+GUI&amp;text2Color=%23ffffff&amp;tag1Visibility=true&amp;tag1=xcwalker.dev&amp;tag1Text=&amp;tag1Color=%23ffffff&amp;tag1TextColor=%23ffffff&amp;tag1BorderColor=%23ffffff&amp;tag2Visibility=true&amp;tag2=Status%3A+&amp;tag2Text=On+Hold&amp;tag2Color=%23d4dde4&amp;tag2TextColor=%23ffffff&amp;tag2BorderColor=%23ffffff">
+                    XCWalker's Stream Background
+                </a>
             </div>
-            <div class="line">
+            <div class="column">
                 <h2>Contact</h2>
                 <ul>
                     <li>

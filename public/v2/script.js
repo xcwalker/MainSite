@@ -10,12 +10,17 @@ document.addEventListener("scroll", e => {
 
 const body = document.body;
 const nav = document.querySelector("nav")
-function showNav() {
+function showNav(vis) {
     if (nav.classList.contains("visible")) {
         nav.classList.remove("visible")
         body.classList.remove("noscroll")
     } else if (!nav.classList.contains("visible")) {
         nav.classList.add("visible")
         body.classList.add("noscroll")
+    }
+
+    if (vis == false) {
+        nav.classList.remove("visible")
+        body.classList.remove("noscroll")
     }
 }

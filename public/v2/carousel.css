@@ -1,0 +1,151 @@
+/* html
+    <div class="header">
+        <h2>Youtube</h2>
+        <div class="progress-bar"></div>
+    </div>
+    <div class="media-container">
+        <button class="handle left-handle">
+            <div class="text">&#8249;</div>
+        </button>
+        <div class="slider">
+            <img src="https://via.placeholder.com/210/00FF00?text=1">
+            <img src="https://via.placeholder.com/220/00FF00?text=2">
+            <img src="https://via.placeholder.com/230/00FF00?text=3">
+            <img src="https://via.placeholder.com/240/00FF00?text=4">
+            <img src="https://via.placeholder.com/250/00FF00?text=5">
+            <img src="https://via.placeholder.com/260/00FF00?text=6">
+            <img src="https://via.placeholder.com/270/00FF00?text=7">
+            <img src="https://via.placeholder.com/280/00FF00?text=8">
+            <img src="https://via.placeholder.com/250/00FF00?text=9">
+            <img src="https://via.placeholder.com/260/00FF00?text=10">
+            <img src="https://via.placeholder.com/270/00FF00?text=11">
+            <img src="https://via.placeholder.com/280/00FF00?text=12">
+        </div>
+        <button class="handle right-handle">
+            <div class="text">&#8250;</div>
+        </button>
+    </div>
+*/
+
+.media-container {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+
+    /* variables */
+    --img-gap: 5px;
+    --border-radius: 20px;
+}
+
+.slider {
+    --items-per-screen: 4;
+    --slider-index: 0;
+    display: flex;
+    flex-grow: 1;
+    margin: 0 var(--img-gap);
+    transform: translateX(calc(var(--slider-index) * -100%));
+    transition: transform 250ms ease-in-out;
+}
+
+.slider>img {
+    flex: 0 0 calc(100% / var(--items-per-screen));
+    max-width: calc(100% / var(--items-per-screen));
+    aspect-ratio: 16 / 9;
+    padding: var(--img-gap);
+    border-radius: var(--border-radius);
+}
+
+.handle {
+    border: none;
+    border-radius: calc(var(--border-radius) - 5px);
+    flex-grow: 0;
+    flex-shrink: 0;
+    background-color: rgba(0, 0, 0, .25);
+    z-index: 10;
+    margin: var(--img-gap) 0;
+    width: 25px;
+    cursor: pointer;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    line-height: 0;
+    transition: background-color 150ms ease-in-out;
+}
+
+.left-handle {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.right-handle {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.handle:hover,
+.handle:focus {
+    background-color: rgba(255, 255, 255, .5);
+}
+
+.text {
+    transition: transform 150ms ease-in-out;
+}
+
+.handle:hover .text,
+.handle:focus .text {
+    transform: scale(1.2);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem calc(var(--img-gap) * 2 + var(--handle-size));
+    align-items: center;
+}
+
+.title {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.progress-bar {
+    display: flex;
+    gap: .25rem;
+}
+
+.progress-item {
+    flex: 0 0 1.5rem;
+    min-width: 1.5rem;
+    height: .5rem;
+    background-color: rgba(255, 255, 255, .5);
+    border-radius: var(--border-radius);
+}
+
+.progress-item.active {
+    background-color: rgba(255, 255, 255, .9);
+}
+
+@media (max-width: 6000px) {
+    .slider {
+        --items-per-screen: 3;
+    }
+}
+
+@media (max-width: 600px) {
+    .slider {
+        --items-per-screen: 2;
+    }
+}
+
+@media (max-width: 300px) {
+    .slider {
+        --items-per-screen: 1;
+    }
+}
+
+body {
+    background-color: #333;
+    color: white;
+}
