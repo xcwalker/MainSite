@@ -17,7 +17,7 @@ document.addEventListener("click", e => {
   
   function calculateProgressBar(progressBar) {
     progressBar.innerHTML = ""
-    const slider = progressBar.closest(".container").querySelector(".slider")
+    const slider = progressBar.closest(".carousel").querySelector(".slider")
     const itemCount = slider.children.length
     const itemsPerScreen = parseInt(
       getComputedStyle(slider).getPropertyValue("--items-per-screen")
@@ -43,7 +43,7 @@ document.addEventListener("click", e => {
   }
   
   function onHandleClick(handle) {
-    const progressBar = handle.closest(".container").querySelector(".progress-bar")
+    const progressBar = handle.closest(".carousel").querySelector(".progress-bar")
     const slider = handle.closest(".media-container").querySelector(".slider")
     const sliderIndex = parseInt(
       getComputedStyle(slider).getPropertyValue("--slider-index")

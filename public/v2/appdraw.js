@@ -11,14 +11,14 @@ function showAppDraw() {
     return false;
 }
 
-const appTemplate = document.querySelector("[data-app-template]");
-const appContainer = document.querySelector("[data-app-container]");
+const appTemplate = document.querySelector("[data-my-projects-template]");
+const appContainer = document.querySelector("[data-my-projects-container]");
 
-const applicationTemplate = document.querySelector("[data-application-template]");
-const applicationContainer = document.querySelector("[data-application-container]");
+// const applicationTemplate = document.querySelector("[data-application-template]");
+// const applicationContainer = document.querySelector("[data-application-container]");
 
-const footerAppsTemplate = document.querySelector("[data-footer-apps-template]");
-const footerAppsContainer = document.querySelector("[data-footer-apps-container]");
+// const footerAppsTemplate = document.querySelector("[data-footer-apps-template]");
+// const footerAppsContainer = document.querySelector("[data-footer-apps-container]");
 
 fetch("https://raw.githubusercontent.com/XCWalker/Default/main/app-switcher.json")
     .then(res => res.json())
@@ -30,48 +30,51 @@ fetch("https://raw.githubusercontent.com/XCWalker/Default/main/app-switcher.json
         });
         apps = sortedapps.map(app => {
             const card = appTemplate.content.cloneNode(true).children[0];
-            const title = card.querySelector("[data-app-title]");
-            const sizingTitle = card.querySelector("[data-app-title]");
-            const hoverTitle = card.querySelector("[data-app-hover-title-sizing]");
-            const sizingHoverTitle = card.querySelector("[data-app-hover-title-sizing]");
-            const icon = card.querySelector("[data-app-icon]");
+            const title = card.querySelector("[data-my-projects-title]");
+            const subtitle = card.querySelector("[data-my-projects-subtitle]");
+            const sizingHoverTitle = card.querySelector("[data-my-projects-link]");
+            const icon = card.querySelector("[data-my-projects-icon]");
             title.textContent = app.title;
-            sizingTitle.textContent = app.title;
+            subtitle.textContent = app.hoverTXT;
             icon.src = app.iconURL;
             icon.alt = app.title;
             card.href = app.URL;
-            hoverTitle.textContent = app.hoverTXT;
-            sizingHoverTitle.textContent = app.hoverTXT;
+            card.style.setProperty('--background-color', app.backgroundColor);
+            card.style.setProperty('--text-color', app.foregroundColor);
+            card.style.setProperty('--border-color', app.borderColor);
+            sizingHoverTitle.textContent = app.URL;
 
             appContainer.append(card);
 
+            document.querySelectorAll(".progress-bar").forEach(calculateProgressBar)
+
             
-            const card2 = applicationTemplate.content.cloneNode(true).children[0];
-            const title2 = card2.querySelector("[data-application-title]");
-            const hoverTitle2 = card2.querySelector("[data-application-tag]");
-            const url = card2.querySelector("[data-application-url]");
-            const icon2 = card2.querySelector("[data-application-icon]");
-            title2.textContent = app.title;
-            icon2.src = app.iconURL;
-            icon2.alt = app.title;
-            card2.href = app.URL;
-            url.textContent = app.URL;
-            hoverTitle2.textContent = app.hoverTXT;
-            card2.style.setProperty('--background-color', app.backgroundColor);
-            card2.style.setProperty('--foreground-color', app.foregroundColor);
-            card2.style.setProperty('--border-color', app.borderColor);
+            // const card2 = applicationTemplate.content.cloneNode(true).children[0];
+            // const title2 = card2.querySelector("[data-application-title]");
+            // const hoverTitle2 = card2.querySelector("[data-application-tag]");
+            // const url = card2.querySelector("[data-application-url]");
+            // const icon2 = card2.querySelector("[data-application-icon]");
+            // title2.textContent = app.title;
+            // icon2.src = app.iconURL;
+            // icon2.alt = app.title;
+            // card2.href = app.URL;
+            // url.textContent = app.URL;
+            // hoverTitle2.textContent = app.hoverTXT;
+            // card2.style.setProperty('--background-color', app.backgroundColor);
+            // card2.style.setProperty('--foreground-color', app.foregroundColor);
+            // card2.style.setProperty('--border-color', app.borderColor);
 
-            applicationContainer.append(card2)
+            // applicationContainer.append(card2)
 
-            const card3 = footerAppsTemplate.content.cloneNode(true).children[0];
-            const title3 = card3.querySelector("[data-footer-apps-title]");
-            const icon3 = card3.querySelector("[data-footer-apps-icon]");
-            title3.textContent = app.title;
-            icon3.src = app.iconURL;
-            icon3.alt = app.title;
-            card3.href = app.URL;
+            // const card3 = footerAppsTemplate.content.cloneNode(true).children[0];
+            // const title3 = card3.querySelector("[data-footer-apps-title]");
+            // const icon3 = card3.querySelector("[data-footer-apps-icon]");
+            // title3.textContent = app.title;
+            // icon3.src = app.iconURL;
+            // icon3.alt = app.title;
+            // card3.href = app.URL;
 
-            footerAppsContainer.append(card3)
+            // footerAppsContainer.append(card3)
 
             if (app.title == "XCWalker") {
                 document.title = app.title + " | " + app.hoverTXT + " | XCWalker";
