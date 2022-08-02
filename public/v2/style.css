@@ -32,6 +32,7 @@ body.noscroll {
 *::before,
 *::after {
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* logo */
@@ -518,7 +519,7 @@ section .content {
 section .side-by-side {
     /* grid */
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(282px, 100%), 1fr));
     gap: calc(var(--gap) * 2);
 }
 
@@ -597,14 +598,22 @@ section .profile-info h3 {
 
         text-align: center;
     }
+
+    section .profile-info .socials {
+        justify-content: center;
+    }
 }
 
 /* projects */
 .project-container h3 {
+    /* text */
     color: var(--primary-text-color);
     font-size: 16px;
     font-weight: 500;
     line-height: 1;
+
+    /* spacing */
+    padding: 0px 10px 5px;
 }
 
 section .projects {
@@ -633,7 +642,9 @@ section .project {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* gap: 5px; */
+
+    /* transistion */
+    transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out, border 0.25s ease-in-out;
 }
 
 .project:hover,
@@ -731,6 +742,196 @@ section a.contact {
     line-height: 1;
 }
 
+/* Youtube */
+.channel {
+    /* position */
+    position: relative;
+
+    /* sizing */
+    padding: 40px 10px;
+
+    /* flex */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* styling */
+    border-radius: 10px;
+    overflow: hidden;
+    color: white;
+    text-decoration: none;
+}
+
+.channel-picture {
+    /* sizing */
+    height: 100px;
+    width: 100px;
+
+    /* styling */
+    border-radius: 50%;
+    box-shadow: 0 5px 10px black;
+}
+
+.channel h3 {
+    /* text */
+    color: inherit;
+    text-shadow: 0 5px 10px black;
+
+    /* tranistion */
+    transition: color 0.25s ease-in-out;
+
+    /* no select */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.channel-background {
+    /* position */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+
+    /* sizing */
+    width: 100%;
+    height: 100%;
+
+    /* image */
+    object-fit: cover;
+    object-position: center;
+
+    /* transition */
+    transition: filter 0.25s ease-in-out;
+}
+
+.channel .open {
+    /* position */
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    /* sizing */
+    width: 20px;
+    height: 20px;
+
+    /* styling */
+    fill: currentColor;
+    color: inherit;
+    filter: drop-shadow(0px 5px 15px black);
+
+    /* tranistion */
+    transition: fill 0.25s ease-in-out;
+}
+
+.channel:hover .channel-background,
+.channel:focus .channel-background,
+.channel:focus-visible .channel-background {
+    filter: brightness(70%);
+}
+
+.channel:active {
+    color: var(--brand-color);
+}
+
+/* playlists */
+.playlist {}
+
+.playlist h4 {
+    /* text */
+    color: var(--primary-text-color);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1;
+    padding: 0px 10px 5px;
+}
+
+.playlist-container {
+    /* grid */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
+    gap: var(--gap);
+}
+
+.playlist-item {
+    /* position */
+    position: relative;
+
+    /* sizing */
+    display: block;
+    width: 100%;
+    aspect-ratio: 16/9;
+
+    /* styling */
+    color: white;
+    text-shadow: 0 5px 10px black;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.playlist-item img {
+    /* sizing */
+    width: 100%;
+    height: 100%;
+
+    /* image */
+    object-fit: cover;
+    object-position: center;
+
+    /* transistion */
+    transition: filter 0.25s ease-in-out;
+}
+
+.playlist-item:hover img,
+.playlist-item:focus img,
+.playlist-item:focus-visible img {
+    filter: brightness(65%);
+}
+
+.playlist-item:active {
+    color: var(--brand-color);
+}
+
+.playlist-item h5 {
+    /* position */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /* text */
+    text-align: center;
+
+    /* transistion */
+    transition: color 0.25s ease-in-out;
+}
+
+.youtube-link-icon {
+    /* position */
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    /* sizing */
+    height: 25px !important;
+    width: 25px !important;
+
+    /* styling */
+    color: inherit;
+    fill: currentColor;
+    filter: drop-shadow(0px 5px 15px black);
+
+    /* transistion */
+    transition: fill 0.25s ease-in-out;
+}
+
+/* Contact */
 section a.contact:hover,
 section a.contact:focus,
 section a.contact:focus-visible {
