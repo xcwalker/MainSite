@@ -1,4 +1,4 @@
-const apiKey = "AIzaSyBfvHpycrZaRpJ9gNQ3KC5DzbSakwi1GyI" //CHANGE ME!!!
+const apiKey = "AIzaSyBGF-_q24Hs9nN_ElRrnVMR-i0t0QiuShI" //CHANGE ME!!!
 const backlogPlaylistID = "PLzpuhxZ8JpIbCTdb5Jn7NB0_LyyQ4cN1S"
 
 const backlogTemplate = document.querySelector("[data-backlog-template]");
