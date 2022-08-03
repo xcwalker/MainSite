@@ -1093,7 +1093,7 @@ footer ul {
 footer a {
     /* sizing */
     width: 100%;
-    height: 40px;
+    min-height: 40px;
     padding: 10px 20px;
 
     /* flex */
