@@ -11,6 +11,10 @@ document.addEventListener("scroll", e => {
 const body = document.body;
 const nav = document.querySelector("nav")
 function showNav(vis) {
+    if (vis != false) {
+        showMenu(false)
+    }
+
     if (nav.classList.contains("visible")) {
         nav.classList.remove("visible")
         body.classList.remove("noscroll")
@@ -23,14 +27,14 @@ function showNav(vis) {
         nav.classList.remove("visible")
         body.classList.remove("noscroll")
     }
-
-    if (vis != false) {
-        showMenu(false)
-    }
 }
 
 const menu = document.querySelector("#menu")
 function showMenu(vis) {
+    if (vis != false) {
+        showNav(false)
+    }
+    
     if (menu.classList.contains("visible")) {
         menu.classList.remove("visible")
         body.classList.remove("noscroll")
@@ -45,9 +49,5 @@ function showMenu(vis) {
         menu.classList.remove("visible")
         body.classList.remove("noscroll")
         header.classList.remove("scrolled")
-    }    
-
-    if (vis != false) {
-        showNav(false)
-    }
+    } 
 }
