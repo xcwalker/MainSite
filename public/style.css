@@ -415,7 +415,7 @@ section#menu .carousel .control {
     /* flex */
     display: flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
 
     /* no select */
     -webkit-touch-callout: none;
@@ -466,7 +466,7 @@ section#menu .carousel .dots {
     width: 100%;
     height: fit-content;
     padding: 5px;
-    
+
     /* flex */
     display: flex;
     justify-content: center;
@@ -513,6 +513,10 @@ section#menu .carousel .dot {
 
     /* anim */
     transition: background-color 0.25s ease-in-out;
+}
+
+section#menu .carousel .dot.active {
+    background-color: var(--brand-color);
 }
 
 section#menu .carousel .dot:hover,
@@ -606,6 +610,16 @@ section#menu .carousel .slide.one h3 {
 section#menu .carousel .slide.two {
     /* temp */
     display: none;
+}
+
+section#menu .carousel .slide.two iframe {
+    /* sizing */
+    display: none;
+    height: 100%;
+    width: 100%;
+}
+section#menu.visible .carousel .slide.two iframe {
+    display: block;
 }
 
 section#menu .projects {
