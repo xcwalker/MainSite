@@ -37,7 +37,8 @@ body.noscroll {
 
 /* logo */
 header .logo-border,
-footer .logo-border {
+footer .logo-border,
+section:not(.fullscreen) .logo-border {
     /* position */
     position: relative;
 
@@ -56,7 +57,8 @@ footer .logo-border {
 }
 
 header .logo-border::after,
-footer .logo-border::after {
+footer .logo-border::after,
+section:not(.fullscreen) .logo-border::after {
     /* content */
     content: "";
 
@@ -83,14 +85,16 @@ footer .logo-border::after {
 }
 
 header .logo:hover .logo-border::after,
-footer .logo-border:hover::after {
+footer .logo-border:hover::after,
+section:not(.fullscreen) .logo-border:hover::after {
     /* animation */
     transform: scaleX(1);
     transform-origin: left;
 }
 
 header .logo-border .end,
-footer .logo-border .end {
+footer .logo-border .end,
+section:not(.fullscreen) .logo-border .end {
     width: 10px;
     height: 100%;
     border: 3px solid white;
@@ -101,17 +105,20 @@ footer .logo-border .end {
 }
 
 header .logo-border .end:first-of-type,
-footer .logo-border .end:first-of-type {
+footer .logo-border .end:first-of-type,
+section:not(.fullscreen) .logo-border .end:first-of-type {
     border-right: none !important;
 }
 
 header .logo-border .end:last-of-type,
-footer .logo-border .end:last-of-type {
+footer .logo-border .end:last-of-type,
+section:not(.fullscreen) .logo-border .end:last-of-type {
     border-left: none !important;
 }
 
 header h1,
-footer h1 {
+footer h1,
+section:not(.fullscreen) h1 {
     /* spacing */
     margin: 0;
 
@@ -135,7 +142,7 @@ header {
     right: 0;
 
     /* position */
-    z-index: 1;
+    z-index: 2;
 
     /* variables */
     --padding: 10px;
@@ -339,8 +346,269 @@ header .menu {
 
 /* menu */
 section#menu {
+    /* position */
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+
+    /* sizing */
+    width: 100vw;
+    min-height: 100vh;
+
+    /* overflow */
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    /* hiding & anim */
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+}
+
+section#menu.visible {
+    /* vis */
+    opacity: 1;
+}
+
+section#menu .container {
+    /* sizing */
+    width: 100%;
+    min-height: 100%;
+
+    /* spacing */
+    padding: 10px;
+    padding-top: 62px;
+
+    /* styling */
+    background-color: var(--secondary-color);
+}
+
+section#menu .carousel {
+    /* position */
+    position: relative;
+
+    /* sizing */
+    height: calc(100vh - 202px);
+    margin-bottom: 10px;
+
+    /* styling */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+section#menu .carousel .control {
+    /* position */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+
+    /* sizing */
+    margin: 10px;
+    padding: 10px;
+    width: 40px;
+
+    /* flex */
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+
+    /* no select */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    /* styling */
+    color: white;
+    text-shadow: 0 5px 10px black;
+    text-decoration: none;
+    border-radius: 10px;
+    overflow: hidden;
+
+    /* anim */
+    transition: backdrop-filter 0.25s ease-in-out, color 0.25s ease-in-out;
+}
+
+section#menu .carousel .control:hover {
+    /* styling */
+    backdrop-filter: brightness(.8) blur(15px) opacity(1);
+}
+
+section#menu .carousel .control:active {
+    /* styling */
+    color: black;
+}
+
+section#menu .carousel .control.left {
+    left: 0;
+}
+
+section#menu .carousel .control.right {
+    right: 0;
+}
+
+section#menu .carousel .dots {
+    /* position */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+
+    /* sizing */
+    width: 100%;
+    height: fit-content;
+    padding: 5px;
+    
+    /* flex */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section#menu .carousel .dots-container {
+    /* flex */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+
+    /* sizing */
+    width: fit-content;
+    height: fit-content;
+    padding: 5px;
+
+    /* styling */
+    border-radius: 10px;
+    overflow: hidden;
+
+    /* anim */
+    transition: backdrop-filter 0.25s ease-in-out;
+}
+
+section#menu .carousel .dots-container:hover,
+section#menu .carousel .dots-container:focus,
+section#menu .carousel .dots-container:focus-visible,
+section#menu .carousel .dots-container:focus-within {
+    backdrop-filter: brightness(.8) blur(15px) opacity(1);
+}
+
+section#menu .carousel .dot {
+    /* sizing */
+    width: 10px;
+    height: 10px;
+
+    /* styling */
+    border-radius: 5px;
+    background-color: white;
+    filter: drop-shadow(0px 5px 10px black);
+
+    /* anim */
+    transition: background-color 0.25s ease-in-out;
+}
+
+section#menu .carousel .dot:hover,
+section#menu .carousel .dot:focus,
+section#menu .carousel .dot:focus-visible {
+    background-color: rgb(194, 194, 194);
+}
+
+section#menu .carousel .dot:active {
+    background-color: rgb(0, 0, 0);
+}
+
+section#menu .carousel .slide {
+    /* sizing */
+    width: 100%;
+    height: 100%;
+}
+
+section#menu .carousel .slide.one {
+    /* position */
+    position: relative;
+}
+
+section#menu .carousel .slide.one .foreground {
+    /* position */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+
+    /* flex */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section#menu .carousel .slide.one .background {
+    /* position */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+
+    /* sizing */
+    width: 100%;
+    height: 100%;
+
+    /* image */
+    object-fit: cover;
+}
+
+section#menu .carousel .slide.one .logo-border {
+    max-height: unset !important;
+    height: fit-content !important;
+}
+
+section#menu .carousel .slide.one .logo-border .end {
+    border-width: 5px !important;
+    width: 15px;
+}
+
+section#menu .carousel .slide.one h1 {
+    /* text */
+    text-transform: uppercase;
+    font-size: min(90px, 10vh, 10vw);
+    font-weight: 700;
+    line-height: 1;
+}
+
+section#menu .carousel .slide.one h2 {
+    /* text */
+    text-transform: uppercase;
+    font-size: min(25px, 3vw, 3vh);
+    font-weight: 600;
+    line-height: 1;
+}
+
+section#menu .carousel .slide.one h3 {
+    /* text */
+    text-transform: uppercase;
+    font-size: min(25px, 3vw, 3vh);
+    font-weight: 600;
+    line-height: 1;
+}
+
+section#menu .carousel .slide.two {
     /* temp */
     display: none;
+}
+
+section#menu .projects {
+    padding: 0;
+    gap: 10px;
 }
 
 /* section fullscreen */

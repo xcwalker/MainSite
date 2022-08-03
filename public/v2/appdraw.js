@@ -1,21 +1,8 @@
-var appsElems
-
-function showAppDraw() {
-    var appDraw = document.getElementById('app-draw');
-    if (appDraw.classList.contains('visible')) {
-        appDraw.classList.remove('visible')
-    } else if (!appDraw.classList.contains('visible')) {
-        appDraw.classList.add('visible')
-        console.error("App Draw Classlist Error")
-    }
-    return false;
-}
-
 const appTemplate = document.querySelector("[data-my-projects-template]");
 const appContainer = document.querySelector("[data-my-projects-container]");
 
-// const applicationTemplate = document.querySelector("[data-application-template]");
-// const applicationContainer = document.querySelector("[data-application-container]");
+const projectsTemplate = document.querySelector("[data-projects-template]");
+const projectsContainer = document.querySelector("[data-projects-container]");
 
 const footerProjectsTemplate = document.querySelector("[data-footer-projects-template]");
 const footerProjectsContainer = document.querySelector("[data-footer-projects-container]");
@@ -46,25 +33,22 @@ fetch("https://raw.githubusercontent.com/XCWalker/Default/main/app-switcher.json
 
             appContainer.append(card);
 
-            document.querySelectorAll(".progress-bar").forEach(calculateProgressBar)
+            const card2 = projectsTemplate.content.cloneNode(true).children[0];
+            const title2 = card2.querySelector("[data-projects-title]");
+            const subtitle2 = card2.querySelector("[data-projects-subtitle]");
+            const sizingHoverTitle2 = card2.querySelector("[data-projects-link]");
+            const icon2 = card2.querySelector("[data-projects-icon]");
+            title2.textContent = app.title;
+            subtitle2.textContent = app.hoverTXT;
+            icon2.src = app.iconURL;
+            icon2.alt = app.title;
+            card2.href = app.URL;
+            card2.style.setProperty('--background-color', app.backgroundColor);
+            card2.style.setProperty('--text-color', app.foregroundColor);
+            card2.style.setProperty('--border-color', app.borderColor);
+            sizingHoverTitle2.textContent = app.URL;
 
-
-            // const card2 = applicationTemplate.content.cloneNode(true).children[0];
-            // const title2 = card2.querySelector("[data-application-title]");
-            // const hoverTitle2 = card2.querySelector("[data-application-tag]");
-            // const url = card2.querySelector("[data-application-url]");
-            // const icon2 = card2.querySelector("[data-application-icon]");
-            // title2.textContent = app.title;
-            // icon2.src = app.iconURL;
-            // icon2.alt = app.title;
-            // card2.href = app.URL;
-            // url.textContent = app.URL;
-            // hoverTitle2.textContent = app.hoverTXT;
-            // card2.style.setProperty('--background-color', app.backgroundColor);
-            // card2.style.setProperty('--foreground-color', app.foregroundColor);
-            // card2.style.setProperty('--border-color', app.borderColor);
-
-            // applicationContainer.append(card2)
+            projectsContainer.append(card2)
 
             const card3 = footerProjectsTemplate.content.cloneNode(true).children[0];
             const card3Link = card3.querySelector("[data-footer-projects-link]");
@@ -73,11 +57,6 @@ fetch("https://raw.githubusercontent.com/XCWalker/Default/main/app-switcher.json
 
             if (app.title != "XCWalker") {
                 footerProjectsContainer.append(card3)
-            }
-
-            if (app.title == "XCWalker") {
-                document.title = app.title + " | " + app.hoverTXT + " | XCWalker";
-                document.querySelector('meta[name="description"]').setAttribute("content", app.description);
             }
 
             return { app }
