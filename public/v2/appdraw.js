@@ -17,8 +17,8 @@ const appContainer = document.querySelector("[data-my-projects-container]");
 // const applicationTemplate = document.querySelector("[data-application-template]");
 // const applicationContainer = document.querySelector("[data-application-container]");
 
-// const footerAppsTemplate = document.querySelector("[data-footer-apps-template]");
-// const footerAppsContainer = document.querySelector("[data-footer-apps-container]");
+const footerProjectsTemplate = document.querySelector("[data-footer-projects-template]");
+const footerProjectsContainer = document.querySelector("[data-footer-projects-container]");
 
 fetch("https://raw.githubusercontent.com/XCWalker/Default/main/app-switcher.json")
     .then(res => res.json())
@@ -48,7 +48,7 @@ fetch("https://raw.githubusercontent.com/XCWalker/Default/main/app-switcher.json
 
             document.querySelectorAll(".progress-bar").forEach(calculateProgressBar)
 
-            
+
             // const card2 = applicationTemplate.content.cloneNode(true).children[0];
             // const title2 = card2.querySelector("[data-application-title]");
             // const hoverTitle2 = card2.querySelector("[data-application-tag]");
@@ -66,15 +66,14 @@ fetch("https://raw.githubusercontent.com/XCWalker/Default/main/app-switcher.json
 
             // applicationContainer.append(card2)
 
-            // const card3 = footerAppsTemplate.content.cloneNode(true).children[0];
-            // const title3 = card3.querySelector("[data-footer-apps-title]");
-            // const icon3 = card3.querySelector("[data-footer-apps-icon]");
-            // title3.textContent = app.title;
-            // icon3.src = app.iconURL;
-            // icon3.alt = app.title;
-            // card3.href = app.URL;
+            const card3 = footerProjectsTemplate.content.cloneNode(true).children[0];
+            const card3Link = card3.querySelector("[data-footer-projects-link]");
+            card3Link.textContent = app.title;
+            card3Link.href = app.URL;
 
-            // footerAppsContainer.append(card3)
+            if (app.title != "XCWalker") {
+                footerProjectsContainer.append(card3)
+            }
 
             if (app.title == "XCWalker") {
                 document.title = app.title + " | " + app.hoverTXT + " | XCWalker";
