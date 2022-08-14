@@ -415,7 +415,7 @@ section#menu .carousel .control {
     /* flex */
     display: flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
 
     /* no select */
     -webkit-touch-callout: none;
@@ -438,7 +438,7 @@ section#menu .carousel .control {
 
 section#menu .carousel .control:hover {
     /* styling */
-    backdrop-filter: brightness(.8) blur(15px) opacity(1);
+    backdrop-filter: brightness(.65) blur(3px) opacity(1);
 }
 
 section#menu .carousel .control:active {
@@ -466,7 +466,7 @@ section#menu .carousel .dots {
     width: 100%;
     height: fit-content;
     padding: 5px;
-    
+
     /* flex */
     display: flex;
     justify-content: center;
@@ -498,7 +498,7 @@ section#menu .carousel .dots-container:hover,
 section#menu .carousel .dots-container:focus,
 section#menu .carousel .dots-container:focus-visible,
 section#menu .carousel .dots-container:focus-within {
-    backdrop-filter: brightness(.8) blur(15px) opacity(1);
+    backdrop-filter: brightness(.65) blur(3px) opacity(1);
 }
 
 section#menu .carousel .dot {
@@ -1026,6 +1026,7 @@ section a.contact {
     /* styling */
     border-radius: 20px;
     background-color: var(--brand-color);
+    outline: 2px solid transparent;
 
     /* transition */
     transition: color 0.25s ease-in-out, outline 0.25s ease-in-out;
@@ -1129,7 +1130,7 @@ section a.contact {
 .channel:hover .channel-background,
 .channel:focus .channel-background,
 .channel:focus-visible .channel-background {
-    filter: brightness(70%);
+    filter: brightness(.65) blur(3px) opacity(1);
 }
 
 .channel:active {
@@ -1190,7 +1191,7 @@ section a.contact {
 .playlist-item:hover img,
 .playlist-item:focus img,
 .playlist-item:focus-visible img {
-    filter: brightness(65%);
+    filter: brightness(.65) blur(3px) opacity(1);
 }
 
 .playlist-item:active {
@@ -1388,6 +1389,7 @@ footer a {
     /* styling */
     border-radius: 20px;
     background-color: var(--brand-color);
+    outline: 2px solid transparent;
 
     /* text */
     text-decoration: none;
