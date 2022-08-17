@@ -1194,6 +1194,13 @@ section a.contact {
     filter: brightness(.65) blur(3px) opacity(1);
 }
 
+.playlist-item:hover h5,
+.playlist-item:focus h5,
+.playlist-item:focus-visible h5 {
+    color: inherit !important;
+    text-shadow: inherit !important;
+}
+
 .playlist-item:active {
     color: var(--brand-color);
 }
@@ -1207,9 +1214,11 @@ section a.contact {
 
     /* text */
     text-align: center;
+    color: transparent;
+    text-shadow: none;
 
     /* transistion */
-    transition: color 0.25s ease-in-out;
+    transition: color 0.25s ease-in-out, text-shadow 0.25s ease-in-out;
 }
 
 .youtube-link-icon {
